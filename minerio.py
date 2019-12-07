@@ -1,6 +1,7 @@
 from mcpi.minecraft import Minecraft
 import mcpi.block as block
 from time import sleep
+import keyboard
 
 mc = Minecraft.create()
 pos = mc.player.getPos()
@@ -66,7 +67,6 @@ while(gameStart == True):
     toY = pos.y + 9
     toZ = pos.z + 20
 
-
     #Clear
     mc.setBlocks(fromX,fromY,fromZ,toX,toY,toZ,0)
     map[playerY][playerX] = playerSprite
@@ -77,36 +77,36 @@ while(gameStart == True):
             fromX -= 1
         toY -= 1
         fromX = pos.x + 19
-    #Move left
-    if (mc.player.getPos().x > currentPos.x):
-        mc.player.setPos(currentPos.x,currentPos.y,currentPos.z)
-        if (playerX != fromIndex) and (map[playerY][playerX - 1] == a):
-            print('<')
-            playerX -= 1
-            if(fromIndex != 0):
-                fromIndex -= 1
-                toIndex -= 1
+    try:
+        #Move left
+        if (keyboard.is_pressed('Left')):
+            #mc.player.setPos(currentPos.x,currentPos.y,currentPos.z)
+            if (playerX != fromIndex) and (map[playerY][playerX - 1] == a):
+                playerX -= 1
+                if(fromIndex != 0):
+                    fromIndex -= 1
+                    toIndex -= 1
 
 
-    #Move right
-    if (mc.player.getPos().x < currentPos.x):
-        mc.player.setPos(currentPos.x,currentPos.y,currentPos.z)
-        if (map[playerY][playerX + 1] == a):
-            print('>')
-            playerX += 1
-            if(toIndex != len(map[0]) - 1):
-                fromIndex += 1
-                toIndex += 1
+        #Move right
+        if (keyboard.is_pressed('Right')):
+            #mc.player.setPos(currentPos.x,currentPos.y,currentPos.z)
+            if (map[playerY][playerX + 1] == a):
+                playerX += 1
+                if(toIndex != len(map[0]) - 1):
+                    fromIndex += 1
+                    toIndex += 1
+    except:
+        pass
     #Jump
-    if(mc.player.getPos().y > currentPos.y):
-        mc.player.setPos(currentPos.x,currentPos.y,currentPos.z)
+    if (keyboard.is_pressed('Up')):
+        #mc.player.setPos(currentPos.x,currentPos.y,currentPos.z)
         if(map[playerY + 1][playerX] != a) and (playerY != 0):
             timesToUp = 3
     if(timesToUp > 0):
         if(map[playerY - 1][playerX] == a):
             playerY -= 1
             timesToUp -= 1
-            print(timesToUp)
         else:
             timesToUp = 0
     try:
@@ -114,8 +114,5 @@ while(gameStart == True):
             playerY += 1
     except:
         playerY += 1
-    #if(playerX > round(((toIndex - fromIndex) / 2))) and (toIndex != len(map) - 1):
-        #toIndex += 1
-        #fromIndex += 1
 
-    #sleep(0.1)
+    #sleep(0.07)
