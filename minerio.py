@@ -39,19 +39,24 @@ while(True):
 g = 2 #Grass
 d = 3 #Dirt
 a = 79 #Sky
+b = 45 #Bricks
+l = 19 #Lucky block
+p = 133 #Pipe
+k = 49 #Black
+w = 35 #White
 
 #Main game loop
 while(gameStart == True):
 
-    map = [[a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-           [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-           [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-           [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,g,g,g,g,g,g,g,g,g,g],
-           [a,a,a,a,a,a,a,a,a,g,g,g,g,g,g,g,g,g,g,g,g,g,g,g,g,g,g,g,g,g,g,g,g,a,a,a,a,a,a,a,a,a,a,a,a],
-           [g,a,a,a,a,a,a,a,g,d,d,d,d,d,d,d,d,d,d,d,d,d,d,d,d,d,d,d,d,d,d,d,d,g,a,a,a,a,a,a,a,a,a,a,a],
-           [d,g,g,g,g,g,g,g,d,d,d,d,d,d,d,d,d,d,d,d,d,d,d,d,d,d,d,d,d,d,d,d,d,d,g,g,g,g,g,g,g,g,g,g,g],
-           [d,d,d,d,d,d,d,d,d,d,d,d,d,d,d,d,d,d,d,d,d,d,d,d,d,d,d,d,d,d,d,d,d,d,d,d,d,d,d,d,d,d,d,d,d],
-           [d,d,d,d,d,d,d,d,d,d,d,d,d,d,d,d,d,d,d,d,d,d,d,d,d,d,d,d,d,d,d,d,d,d,d,d,d,d,d,d,d,d,d,d,d]
+    map = [[a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,k],
+           [a,a,a,a,a,a,a,a,a,a,a,l,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,w],
+           [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,b,b,b,b,b,b,a,a,a,b,b,b,l,a,a,a,a,a,a,a,a,a,a,a,a,l,a,a,a,a,a,a,a,a,b,b,b,a,a,a,a,b,l,l,b,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,b,b,b,b,a,a,a,a,a,a,k],
+           [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,p,p,p,p,a,a,a,a,a,a,p,p,p,p,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,b,a,a,b,a,a,a,a,a,a,a,a,a,a,a,a,b,b,a,a,b,a,a,a,a,a,a,a,a,a,a,a,a,a,b,b,l,b,a,a,a,a,a,a,a,a,a,a,a,a,b,b,b,b,b,a,a,a,a,a,a,w],
+           [a,a,a,a,a,a,l,a,a,b,l,b,l,b,a,a,a,a,a,a,a,a,a,a,p,p,p,p,a,a,a,a,a,a,a,p,p,a,a,a,a,a,a,a,a,p,p,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,b,l,b,a,a,a,a,a,a,a,a,a,a,a,a,a,b,a,a,a,a,b,b,a,a,a,a,l,a,l,a,l,a,a,a,a,b,a,a,a,a,a,a,a,a,a,b,b,a,a,a,a,a,b,b,a,a,b,b,a,a,a,a,a,a,a,a,a,a,b,b,b,a,a,b,b,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,b,b,b,b,b,b,a,a,a,a,a,a,k],
+           [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,p,p,p,p,a,a,a,a,a,p,p,a,a,a,a,a,a,a,a,p,p,a,a,a,a,a,a,a,a,p,p,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,b,b,b,a,a,b,b,b,a,a,a,a,a,a,a,a,b,b,b,b,a,a,b,b,b,a,a,a,a,p,p,p,p,a,a,a,a,a,a,a,a,a,a,a,a,p,p,p,p,a,b,b,b,b,b,b,b,a,a,a,a,a,a,w],
+           [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,p,p,a,a,a,a,a,a,p,p,a,a,a,a,a,a,a,a,p,p,a,a,a,a,a,a,a,a,p,p,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,b,b,b,b,a,a,b,b,b,b,a,a,a,a,a,a,b,b,b,b,b,a,a,b,b,b,b,a,a,a,a,p,p,a,a,a,a,a,a,a,a,a,a,a,a,a,a,p,p,a,b,b,b,b,b,b,b,b,a,a,a,a,a,a,b],
+           [b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,a,a,a,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,a,a,a,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,a,a,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b],
+           [b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,a,a,a,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,a,a,a,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,a,a,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b]
           ]
 
     currentPos = mc.player.getPos()
@@ -83,9 +88,9 @@ while(gameStart == True):
             #mc.player.setPos(currentPos.x,currentPos.y,currentPos.z)
             if (playerX != fromIndex) and (map[playerY][playerX - 1] == a):
                 playerX -= 1
-                if(fromIndex != 0):
-                    fromIndex -= 1
-                    toIndex -= 1
+                #if(fromIndex != 0):
+                    #fromIndex -= 1
+                    #toIndex -= 1
 
 
         #Move right
@@ -93,7 +98,7 @@ while(gameStart == True):
             #mc.player.setPos(currentPos.x,currentPos.y,currentPos.z)
             if (map[playerY][playerX + 1] == a):
                 playerX += 1
-                if(toIndex != len(map[0]) - 1):
+                if(toIndex != len(map[0])) and (playerX == toIndex - 8):
                     fromIndex += 1
                     toIndex += 1
     except:
@@ -102,17 +107,21 @@ while(gameStart == True):
     if (keyboard.is_pressed('Up')):
         #mc.player.setPos(currentPos.x,currentPos.y,currentPos.z)
         if(map[playerY + 1][playerX] != a) and (playerY != 0):
-            timesToUp = 3
+            timesToUp = 5
     if(timesToUp > 0):
-        if(map[playerY - 1][playerX] == a):
+        if(map[playerY - 1][playerX] == a) and (playerY != 0) and (playerY != len(map) - 1):
             playerY -= 1
             timesToUp -= 1
         else:
             timesToUp = 0
+    if(playerY == 8):
+        break
     try:
         if (timesToUp == 0) and (map[playerY + 1][playerX] == a):
             playerY += 1
     except:
         playerY += 1
-
+    if(playerX == len(map[0]) - 2):
+        break
     #sleep(0.07)
+mc.postToChat('GAME OVER!')
