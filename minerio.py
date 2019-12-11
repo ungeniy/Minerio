@@ -2,6 +2,7 @@ from mcpi.minecraft import Minecraft
 import mcpi.block as block
 from time import sleep
 import keyboard
+from pygame import mixer
 
 mc = Minecraft.create()
 pos = mc.player.getPos()
@@ -12,6 +13,8 @@ playerX = 1
 playerY = 5
 playerSprite = block.Block(35,14)
 timesToUp = 0
+mixer.init()
+mixer.music.load('Music\Super-Mario-Bros.mp3')
 
 
 #Build TV
@@ -33,6 +36,7 @@ while(True):
     if(mc.getBlock(pos.x + 9,pos.y - 1,pos.z + 5) == 0):
         gameStart = True
         mc.postToChat('GAME START!')
+        mixer.music.play(-1)
         break
 #Blocks
 
