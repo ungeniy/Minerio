@@ -52,15 +52,15 @@ w = 35 #White
 #Main game loop
 while(gameStart == True):
 
-    map = [[a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,k],
-           [a,a,a,a,a,a,a,a,a,a,a,l,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,w],
-           [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,b,b,b,b,b,b,a,a,a,b,b,b,l,a,a,a,a,a,a,a,a,a,a,a,a,l,a,a,a,a,a,a,a,a,b,b,b,a,a,a,a,b,l,l,b,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,b,b,b,b,a,a,a,a,a,a,k],
-           [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,p,p,p,p,a,a,a,a,a,a,p,p,p,p,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,b,a,a,b,a,a,a,a,a,a,a,a,a,a,a,a,b,b,a,a,b,a,a,a,a,a,a,a,a,a,a,a,a,a,b,b,l,b,a,a,a,a,a,a,a,a,a,a,a,a,b,b,b,b,b,a,a,a,a,a,a,w],
-           [a,a,a,a,a,a,l,a,a,b,l,b,l,b,a,a,a,a,a,a,a,a,a,a,p,p,p,p,a,a,a,a,a,a,a,p,p,a,a,a,a,a,a,a,a,p,p,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,b,l,b,a,a,a,a,a,a,a,a,a,a,a,a,a,b,a,a,a,a,b,b,a,a,a,a,l,a,l,a,l,a,a,a,a,b,a,a,a,a,a,a,a,a,a,b,b,a,a,a,a,a,b,b,a,a,b,b,a,a,a,a,a,a,a,a,a,a,b,b,b,a,a,b,b,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,b,b,b,b,b,b,a,a,a,a,a,a,k],
-           [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,p,p,p,p,a,a,a,a,a,p,p,a,a,a,a,a,a,a,a,p,p,a,a,a,a,a,a,a,a,p,p,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,b,b,b,a,a,b,b,b,a,a,a,a,a,a,a,a,b,b,b,b,a,a,b,b,b,a,a,a,a,p,p,p,p,a,a,a,a,a,a,a,a,a,a,a,a,p,p,p,p,a,b,b,b,b,b,b,b,a,a,a,a,a,a,w],
-           [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,p,p,a,a,a,a,a,a,p,p,a,a,a,a,a,a,a,a,p,p,a,a,a,a,a,a,a,a,p,p,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,b,b,b,b,a,a,b,b,b,b,a,a,a,a,a,a,b,b,b,b,b,a,a,b,b,b,b,a,a,a,a,p,p,a,a,a,a,a,a,a,a,a,a,a,a,a,a,p,p,a,b,b,b,b,b,b,b,b,a,a,a,a,a,a,b],
-           [b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,a,a,a,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,a,a,a,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,a,a,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b],
-           [b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,a,a,a,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,a,a,a,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,a,a,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b]
+    map = [[a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+           [a,a,a,a,a,a,a,a,a,a,a,l,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,b,a,a,a,a],
+           [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,b,b,b,b,b,b,a,a,a,b,b,b,l,a,a,a,a,a,a,a,a,a,a,a,a,l,a,a,a,a,a,a,a,a,b,b,b,a,a,a,a,b,l,l,b,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,b,b,b,b,a,a,a,a,a,a,a,a,a,a,b,k,b,a,a,a],
+           [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,p,p,p,p,a,a,a,a,a,a,p,p,p,p,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,b,a,a,b,a,a,a,a,a,a,a,a,a,a,a,a,b,b,a,a,b,a,a,a,a,a,a,a,a,a,a,a,a,a,b,b,l,b,a,a,a,a,a,a,a,a,a,a,a,a,b,b,b,b,b,a,a,a,a,a,a,a,b,a,b,b,b,b,b,a,b],
+           [a,a,a,a,a,a,l,a,a,b,l,b,l,b,a,a,a,a,a,a,a,a,a,a,p,p,p,p,a,a,a,a,a,a,a,p,p,a,a,a,a,a,a,a,a,p,p,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,b,l,b,a,a,a,a,a,a,a,a,a,a,a,a,a,b,a,a,a,a,b,b,a,a,a,a,l,a,l,a,l,a,a,a,a,b,a,a,a,a,a,a,a,a,a,b,b,a,a,a,a,a,b,b,a,a,b,b,a,a,a,a,a,a,a,a,a,a,b,b,b,a,a,b,b,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,b,b,b,b,b,b,a,a,a,a,a,a,a,b,b,b,b,b,b,b,b,b],
+           [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,p,p,p,p,a,a,a,a,a,p,p,a,a,a,a,a,a,a,a,p,p,a,a,a,a,a,a,a,a,p,p,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,b,b,b,a,a,b,b,b,a,a,a,a,a,a,a,a,b,b,b,b,a,a,b,b,b,a,a,a,a,p,p,p,p,a,a,a,a,a,a,a,a,a,a,a,a,p,p,p,p,a,b,b,b,b,b,b,b,a,a,a,a,a,a,a,b,b,b,k,k,k,b,b,b],
+           [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,p,p,a,a,a,a,a,a,p,p,a,a,a,a,a,a,a,a,p,p,a,a,a,a,a,a,a,a,p,p,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,b,b,b,b,a,a,b,b,b,b,a,a,a,a,a,a,b,b,b,b,b,a,a,b,b,b,b,a,a,a,a,p,p,a,a,a,a,a,a,a,a,a,a,a,a,a,a,p,p,a,b,b,b,b,b,b,b,b,a,a,a,a,a,a,a,b,b,b,k,k,k,b,b,b],
+           [b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,a,a,a,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,a,a,a,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,a,a,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b],
+           [b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,a,a,a,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,a,a,a,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,a,a,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b]
           ]
 
     currentPos = mc.player.getPos()
@@ -89,17 +89,11 @@ while(gameStart == True):
     try:
         #Move left
         if (keyboard.is_pressed('Left')):
-            #mc.player.setPos(currentPos.x,currentPos.y,currentPos.z)
             if (playerX != fromIndex) and (map[playerY][playerX - 1] == a):
                 playerX -= 1
-                #if(fromIndex != 0):
-                    #fromIndex -= 1
-                    #toIndex -= 1
-
 
         #Move right
         if (keyboard.is_pressed('Right')):
-            #mc.player.setPos(currentPos.x,currentPos.y,currentPos.z)
             if (map[playerY][playerX + 1] == a):
                 playerX += 1
                 if(toIndex != len(map[0])) and (playerX == toIndex - 8):
@@ -109,7 +103,6 @@ while(gameStart == True):
         pass
     #Jump
     if (keyboard.is_pressed('Up')):
-        #mc.player.setPos(currentPos.x,currentPos.y,currentPos.z)
         if(map[playerY + 1][playerX] != a) and (playerY != 0):
             timesToUp = 5
     if(timesToUp > 0):
@@ -119,13 +112,19 @@ while(gameStart == True):
         else:
             timesToUp = 0
     if(playerY == 8):
+        mixer.music.load('Music\you-re-dead.mp3')
+        mixer.music.play()
+        sleep(6)
         break
     try:
         if (timesToUp == 0) and (map[playerY + 1][playerX] == a):
             playerY += 1
     except:
         playerY += 1
-    if(playerX == len(map[0]) - 2):
+    if(playerX == len(map[0]) - 10):
+        mixer.music.load('Music\level-complete.mp3')
+        mixer.music.play()
+        sleep(8)
         break
     #sleep(0.07)
 mc.postToChat('GAME OVER!')
