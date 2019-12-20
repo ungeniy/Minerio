@@ -82,7 +82,8 @@ while(gameStart == True):
     mc.setBlocks(fromX,fromY,fromZ,toX,toY,toZ,0)
     #Deleting destroyed blocks from the map
     for row in range(0,len(destroyedBlocks)):
-        map[destroyedBlocks[row][0]][destroyedBlocks[row][1]] = a
+        if(destroyedBlocks[row][0] > 0):
+            map[destroyedBlocks[row][0]][destroyedBlocks[row][1]] = a
     map[playerY][playerX] = playerSprite
     #Build map
     for row in map:
