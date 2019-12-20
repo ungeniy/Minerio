@@ -23,20 +23,12 @@ mc.setBlocks(pos.x,pos.y,pos.z + 20,pos.x,pos.y + 10,pos.z + 20,blackWool)
 mc.setBlocks(pos.x,pos.y,pos.z + 20,pos.x + 20,pos.y,pos.z + 20,blackWool)
 mc.setBlocks(pos.x + 20,pos.y,pos.z + 20,pos.x + 20,pos.y + 10,pos.z + 20,blackWool)
 mc.setBlocks(pos.x,pos.y + 10,pos.z + 20,pos.x + 20,pos.y + 10,pos.z + 20,blackWool)
-#Build buttons
-mc.setBlock(pos.x + 10,pos.y - 1,pos.z + 5,block.Block(35,11))#Playground
-mc.setBlock(pos.x + 9,pos.y - 1,pos.z + 5,block.Block(35,14))#Play
-mc.setBlock(pos.x + 11,pos.y - 1,pos.z + 5,block.Block(35,5))#Reset
 
 
 while(True):
-    if(mc.getBlock(pos.x + 11,pos.y - 1,pos.z + 5) == 0):
-        mc.postToChat('GAME OVER!')
-        break
-    if(mc.getBlock(pos.x + 9,pos.y - 1,pos.z + 5) == 0):
+    if(keyboard.is_pressed('M')):
+        mixer.music.play()
         gameStart = True
-        mc.postToChat('GAME START!')
-        mixer.music.play(-1)
         break
 #Blocks
 
