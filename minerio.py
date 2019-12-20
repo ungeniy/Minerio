@@ -49,6 +49,8 @@ p = 133 #Pipe
 k = 49 #Black
 w = 35 #White
 
+destroyedBlocks = []
+
 #Main game loop
 while(gameStart == True):
 
@@ -78,6 +80,9 @@ while(gameStart == True):
 
     #Clear
     mc.setBlocks(fromX,fromY,fromZ,toX,toY,toZ,0)
+    #Deleting destroyed blocks from the map
+    for row in range(0,len(destroyedBlocks)):
+        map[destroyedBlocks[row][0]][destroyedBlocks[row][1]] = a
     map[playerY][playerX] = playerSprite
     #Build map
     for row in map:
@@ -110,6 +115,9 @@ while(gameStart == True):
             playerY -= 1
             timesToUp -= 1
         else:
+            if(map[playerY - 1][playerX] == l) or (map[playerY - 1][playerX] == b):
+                if(destroyedBlocks.count([playerY - 1,playerX]) == 0):
+                    destroyedBlocks.append([playerY - 1,playerX])
             timesToUp = 0
     if(playerY == 8):
         mixer.music.load('Music\you-re-dead.mp3')
