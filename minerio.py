@@ -29,13 +29,13 @@ def play():
 	playerY = 5
 	timesToUp = 0
 	mixer.init()
-	mixer.music.load('Music\Super-Mario-Bros.mp3')
+	mixer.music.load('Music\Xmas_theme.mp3')
 	while(True):
 		if(keyboard.is_pressed('M')):
 			if(Tv_is_built == False):
 				buildTv()
 				Tv_is_built = True
-				mixer.music.load('Music\Super-Mario-Bros.mp3')
+				mixer.music.load('Music\Xmas_theme.mp3')
 				mixer.music.play()
 				gameStart = True
 				mc.postToChat('Game started. To end the game, press L')
@@ -44,13 +44,13 @@ def play():
 				mc.setBlocks(pos.x + 20,pos.y,pos.z + 20,pos.x,pos.y + 10,pos.z + 20,0)
 				pos = mc.player.getPos()
 				buildTv()
-				mixer.music.load('Music\Super-Mario-Bros.mp3')
+				mixer.music.load('Music\Xmas_theme.mp3')
 				mixer.music.play()
 				gameStart = True
 				mc.postToChat('Game started. To end the game, press L')
 				break
 			else:
-				mixer.music.load('Music\Super-Mario-Bros.mp3')
+				mixer.music.load('Music\Xmas_theme.mp3')
 				mixer.music.play()
 				gameStart = True
 				mc.postToChat('Game started. To end the game, press L')
@@ -61,11 +61,12 @@ def play():
 	g = 2 #Grass
 	d = 3 #Dirt
 	a = 79 #Sky
-	b = 45 #Bricks
+	b = 80 #Bricks
 	l = 19 #Lucky block
 	p = 133 #Pipe
 	k = 49 #Black
 	w = 35 #White
+	r = 152 #Red
 
 	destroyedBlocks = []
 
@@ -75,10 +76,10 @@ def play():
 	    map = [[a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
 	           [a,a,a,a,a,a,a,a,a,a,a,l,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,b,a,a,a,a],
 	           [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,b,b,b,b,b,b,a,a,a,b,b,b,l,a,a,a,a,a,a,a,a,a,a,a,a,l,a,a,a,a,a,a,a,a,b,b,b,a,a,a,a,b,l,l,b,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,b,b,b,b,a,a,a,a,a,a,a,a,a,a,b,k,b,a,a,a],
-	           [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,p,p,p,p,a,a,a,a,a,a,p,p,p,p,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,b,a,a,b,a,a,a,a,a,a,a,a,a,a,a,a,b,b,a,a,b,a,a,a,a,a,a,a,a,a,a,a,a,a,b,b,l,b,a,a,a,a,a,a,a,a,a,a,a,a,b,b,b,b,b,a,a,a,a,a,a,a,b,a,b,b,b,b,b,a,b],
-	           [a,a,a,a,a,a,l,a,a,b,l,b,l,b,a,a,a,a,a,a,a,a,a,a,p,p,p,p,a,a,a,a,a,a,a,p,p,a,a,a,a,a,a,a,a,p,p,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,b,l,b,a,a,a,a,a,a,a,a,a,a,a,a,a,b,a,a,a,a,b,b,a,a,a,a,l,a,l,a,l,a,a,a,a,b,a,a,a,a,a,a,a,a,a,b,b,a,a,a,a,a,b,b,a,a,b,b,a,a,a,a,a,a,a,a,a,a,b,b,b,a,a,b,b,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,b,b,b,b,b,b,a,a,a,a,a,a,a,b,b,b,b,b,b,b,b,b],
-	           [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,p,p,p,p,a,a,a,a,a,p,p,a,a,a,a,a,a,a,a,p,p,a,a,a,a,a,a,a,a,p,p,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,b,b,b,a,a,b,b,b,a,a,a,a,a,a,a,a,b,b,b,b,a,a,b,b,b,a,a,a,a,p,p,p,p,a,a,a,a,a,a,a,a,a,a,a,a,p,p,p,p,a,b,b,b,b,b,b,b,a,a,a,a,a,a,a,b,b,b,k,k,k,b,b,b],
-	           [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,p,p,a,a,a,a,a,a,p,p,a,a,a,a,a,a,a,a,p,p,a,a,a,a,a,a,a,a,p,p,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,b,b,b,b,a,a,b,b,b,b,a,a,a,a,a,a,b,b,b,b,b,a,a,b,b,b,b,a,a,a,a,p,p,a,a,a,a,a,a,a,a,a,a,a,a,a,a,p,p,a,b,b,b,b,b,b,b,b,a,a,a,a,a,a,a,b,b,b,k,k,k,b,b,b],
+	           [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,w,r,w,r,a,a,a,a,a,a,w,r,w,r,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,b,a,a,b,a,a,a,a,a,a,a,a,a,a,a,a,b,b,a,a,b,a,a,a,a,a,a,a,a,a,a,a,a,a,b,b,l,b,a,a,a,a,a,a,a,a,a,a,a,a,b,b,b,b,b,a,a,a,a,a,a,a,b,a,b,b,b,b,b,a,b],
+	           [a,a,a,a,a,a,l,a,a,b,l,b,l,b,a,a,a,a,a,a,a,a,a,a,r,w,r,w,a,a,a,a,a,a,a,w,r,a,a,a,a,a,a,a,a,w,r,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,b,l,b,a,a,a,a,a,a,a,a,a,a,a,a,a,b,a,a,a,a,b,b,a,a,a,a,l,a,l,a,l,a,a,a,a,b,a,a,a,a,a,a,a,a,a,b,b,a,a,a,a,a,b,b,a,a,b,b,a,a,a,a,a,a,a,a,a,a,b,b,b,a,a,b,b,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,b,b,b,b,b,b,a,a,a,a,a,a,a,b,b,b,b,b,b,b,b,b],
+	           [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,w,r,w,r,a,a,a,a,a,r,w,a,a,a,a,a,a,a,a,r,w,a,a,a,a,a,a,a,a,r,w,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,b,b,b,a,a,b,b,b,a,a,a,a,a,a,a,a,b,b,b,b,a,a,b,b,b,a,a,a,a,w,r,w,r,a,a,a,a,a,a,a,a,a,a,a,a,w,r,w,w,a,b,b,b,b,b,b,b,a,a,a,a,a,a,a,b,b,b,k,k,k,b,b,b],
+	           [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,w,r,a,a,a,a,a,a,w,r,a,a,a,a,a,a,a,a,w,r,a,a,a,a,a,a,a,a,w,r,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,b,b,b,b,a,a,b,b,b,b,a,a,a,a,a,a,b,b,b,b,b,a,a,b,b,b,b,a,a,a,a,w,r,a,a,a,a,a,a,a,a,a,a,a,a,a,a,w,r,a,b,b,b,b,b,b,b,b,a,a,a,a,a,a,a,b,b,b,k,k,k,b,b,b],
 	           [b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,a,a,a,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,a,a,a,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,a,a,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b],
 	           [b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,a,a,a,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,a,a,a,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,a,a,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b,b]
 	          ]
